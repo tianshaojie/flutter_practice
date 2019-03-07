@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text('首页'),
       ),
       body: new Center(
         child: new Column(

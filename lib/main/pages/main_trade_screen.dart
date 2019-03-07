@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class EmailScreen extends StatefulWidget {
+class TradeScreen extends StatefulWidget {
   @override
-  _EmailScreenState createState() => _EmailScreenState();
+  _TradeScreenState createState() => _TradeScreenState();
 }
 
-class _EmailScreenState extends State<EmailScreen>
+class _TradeScreenState extends State<TradeScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
@@ -23,7 +23,7 @@ class _EmailScreenState extends State<EmailScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('EmailScreen'),
+        title: Text('交易'),
       ),
       body: new Center(
         child: new Column(

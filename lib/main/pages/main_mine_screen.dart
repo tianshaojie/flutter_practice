@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AirPlayScreen extends StatefulWidget {
+class MineScreen extends StatefulWidget {
   @override
-  _AirPlayScreenState createState() => _AirPlayScreenState();
+  _MineScreenState createState() => _MineScreenState();
 }
 
-class _AirPlayScreenState extends State<AirPlayScreen>
+class _MineScreenState extends State<MineScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
@@ -23,7 +23,7 @@ class _AirPlayScreenState extends State<AirPlayScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('AirPlayScreen'),
+        title: Text('我的'),
       ),
       body: new Center(
         child: new Column(

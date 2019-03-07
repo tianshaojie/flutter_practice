@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'pages/main_home_screen.dart';
-import 'pages/main_trade_screen.dart';
-import 'pages/main_news_screen.dart';
-import 'pages/main_mine_screen.dart';
+import 'package:flutter_practice/main/pages/main_home_screen.dart';
+import 'package:flutter_practice/main/pages/main_trade_screen.dart';
+import 'package:flutter_practice/main/pages/main_news_screen.dart';
+import 'package:flutter_practice/main/pages/main_mine_screen.dart';
 
 class NavigationKeepAlive extends StatefulWidget {
   @override

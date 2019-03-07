@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class PagesScreen extends StatefulWidget {
+class NewsScreen extends StatefulWidget {
   @override
-  _PagesScreenState createState() => _PagesScreenState();
+  _NewsScreenState createState() => _NewsScreenState();
 }
 
-class _PagesScreenState extends State<PagesScreen>
+class _NewsScreenState extends State<NewsScreen>
     with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
@@ -23,7 +23,7 @@ class _PagesScreenState extends State<PagesScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('PagesScreen'),
+        title: Text('资讯'),
       ),
       body: new Center(
         child: new Column(
