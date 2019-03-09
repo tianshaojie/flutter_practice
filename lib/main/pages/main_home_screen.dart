@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/main/pages/main_home_screen.dart';
 import 'package:flutter_practice/main/pages/main_trade_screen.dart';
 import 'package:flutter_practice/main/pages/main_news_screen.dart';
 import 'package:flutter_practice/main/pages/main_mine_screen.dart';
@@ -9,6 +8,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+// TabController + TabBar
 class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
 
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return new DefaultTabController(
-        length: _allPages.length,
+        length: _allTabs.length,
         child: new Scaffold(
           appBar: PreferredSize(
               child: new AppBar(
@@ -39,7 +39,12 @@ class _HomeScreenState extends State<HomeScreen>
                       onPressed: null)
                 ],
                 centerTitle: true,
-                title: new TabLayout(),
+                title: new TabBar(
+                  isScrollable: true,
+                  labelPadding: EdgeInsets.all(12.0),
+                  indicatorSize: TabBarIndicatorSize.label,
+                  tabs: _allTabs.map((name) => new Tab(text: name)).toList(),
+                ),
               ),
               preferredSize: Size.fromHeight(48.0)
           ),
@@ -49,56 +54,17 @@ class _HomeScreenState extends State<HomeScreen>
   }
 }
 
-class TabLayout extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new TabBar(
-      isScrollable: true,
-      labelPadding: EdgeInsets.all(12.0),
-      indicatorSize: TabBarIndicatorSize.label,
-      tabs: _allPages.map((_Page page) => new Tab(text: page.labelId)).toList(),
-    );
-  }
-}
-
-class _Page {
-  final String labelId;
-  _Page(this.labelId);
-}
-
-final List<_Page> _allPages = <_Page>[
-  new _Page('全部'),
-  new _Page('港股'),
-  new _Page('美股'),
-  new _Page('沪深'),
-];
-
+final List<String> _allTabs  = ['全部', '港股', '美股', '沪深'];
+final List<Widget> _allPages = [TradeScreen(), TradeScreen(), NewsScreen(), MineScreen()];
 
 class TabBarViewLayout extends StatelessWidget {
-  Widget buildTabView(BuildContext context, _Page page) {
-    String labelId = page.labelId;
-    switch (labelId) {
-      case '全部':
-        return TradeScreen();
-      case '港股':
-        return TradeScreen();
-      case '美股':
-        return NewsScreen();
-      case '沪深':
-        return MineScreen();
-      default:
-        return Container();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return new TabBarView(
-      children: _allPages.map((_Page page) {
-        return buildTabView(context, page);
-      }).toList());
+        children: _allTabs.map((name) {
+          return _allPages[_allTabs.indexOf(name)];
+        }).toList());
   }
 }
-
 
 
