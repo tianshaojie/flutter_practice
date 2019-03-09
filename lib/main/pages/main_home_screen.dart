@@ -8,7 +8,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-// TabController + TabBar
+// TabController + TabBar + TabBarView
 class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
 
