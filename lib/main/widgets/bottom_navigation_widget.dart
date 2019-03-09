@@ -13,6 +13,7 @@ class _NavigationKeepAliveState extends State<NavigationKeepAlive>
     with SingleTickerProviderStateMixin {
 
   final _bottomNavigationColor = Colors.blue;
+
   int _currentIndex = 0;
   var _controller = PageController(
     initialPage: 0,
@@ -72,7 +73,7 @@ class _NavigationKeepAliveState extends State<NavigationKeepAlive>
                 color: _bottomNavigationColor,
               ),
               title: Text(
-                '咨询',
+                '资讯',
                 style: TextStyle(color: _bottomNavigationColor, fontSize: 11),
               )),
           BottomNavigationBarItem(

@@ -22,8 +22,11 @@ class _MineScreenState extends State<MineScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('我的'),
+      appBar: PreferredSize(
+          child: AppBar(
+            title: Text('我的'),
+          ),
+          preferredSize: Size.fromHeight(48.0)
       ),
       body: new Center(
         child: new Column(

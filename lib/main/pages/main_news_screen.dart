@@ -22,8 +22,11 @@ class _NewsScreenState extends State<NewsScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('资讯'),
+      appBar: PreferredSize(
+          child: AppBar(
+            title: Text('资讯'),
+          ),
+          preferredSize: Size.fromHeight(48.0)
       ),
       body: new Center(
         child: new Column(
