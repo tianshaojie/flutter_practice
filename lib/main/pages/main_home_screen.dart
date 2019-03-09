@@ -12,6 +12,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
 
+  final List<String> _allTabs  = ['全部', '港股', '美股', '沪深'];
+  final List<Widget> _allPages = [TradeScreen(), TradeScreen(), NewsScreen(), MineScreen()];
+
   @override
   bool get wantKeepAlive => true;
 
@@ -48,23 +51,11 @@ class _HomeScreenState extends State<HomeScreen>
               ),
               preferredSize: Size.fromHeight(48.0)
           ),
-          body: new TabBarViewLayout(),
+          body: new TabBarView(
+              children: _allTabs.map((name) {
+                return _allPages[_allTabs.indexOf(name)];
+              }).toList()),
         )
     );
   }
 }
-
-final List<String> _allTabs  = ['全部', '港股', '美股', '沪深'];
-final List<Widget> _allPages = [TradeScreen(), TradeScreen(), NewsScreen(), MineScreen()];
-
-class TabBarViewLayout extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new TabBarView(
-        children: _allTabs.map((name) {
-          return _allPages[_allTabs.indexOf(name)];
-        }).toList());
-  }
-}
-
-
