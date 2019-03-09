@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/main/pages/main_trade_screen.dart';
 import 'package:flutter_practice/main/pages/main_news_screen.dart';
 import 'package:flutter_practice/main/pages/main_mine_screen.dart';
+import 'package:flutter_practice/practice/simple_list.dart';
+import 'package:flutter_practice/appBarBottomWidget.dart';
+import 'package:flutter_practice/navigation.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -13,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen>
     with AutomaticKeepAliveClientMixin {
 
   final List<String> _allTabs  = ['全部', '港股', '美股', '沪深'];
-  final List<Widget> _allPages = [TradeScreen(), TradeScreen(), NewsScreen(), MineScreen()];
+  final List<Widget> _allPages = [SimpleListView(), Navigation(), AppBarBottom(), MineScreen()];
 
   @override
   bool get wantKeepAlive => true;

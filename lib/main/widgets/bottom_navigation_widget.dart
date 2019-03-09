@@ -47,6 +47,7 @@ class _NavigationKeepAliveState extends State<NavigationKeepAlive>
             _currentIndex = index;
           });
         },
+
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
