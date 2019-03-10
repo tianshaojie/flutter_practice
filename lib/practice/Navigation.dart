@@ -15,14 +15,12 @@ class _NavigationState extends State<Navigation> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('navigation'),
-        ),
-        body: buildBody(),
-        bottomNavigationBar: _buildBottomNavigationBar(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Navigation'),
       ),
+      body: buildBody(),
+      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
@@ -204,7 +202,7 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: Colors.lightBlue,
+      color: Theme.of(context).primaryColor,
       child: Text('$text', style: TextStyle(color: Colors.white)),
       onPressed: onPress,
     );
