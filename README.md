@@ -1,16 +1,43 @@
-# flutter_practice
+## 环境配置
 
-A new Flutter application.
+#### 下载
+[Flutter SDK Archive  - Flutter](https://flutter.io/docs/development/tools/sdk/archive#macos)
 
-## Getting Started
+#### 环境变量
 
-This project is a starting point for a Flutter application.
+```
+vi ~/.bash_profile
 
-A few resources to get you started if this is your first Flutter project:
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
+export FLUTTER_HOME=/Users/tianshaojie/development/flutter
+export PATH=$PATH:$FLUTTER_HOME/bin
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## 检查
+flutter doctor
+
+## 升级
+flutter upgrade
+
+## AS3.0+，安装Flutter和Dart插件:
+* Flutter插件： 支持Flutter开发工作流 (运行、调试、热重载等).
+* Dart插件： 提供代码分析 (输入代码时进行验证、代码补全等).
+```
+
+
+
+## 移动端跨平台开发演进：
+####  OEM Widgets：Android、iOS，提供Framework，与系统通信，绘制界面
+`java/objectc -> framework -> canvas`
+####  WebView：PhoneGap，基于浏览器，提供一套js框架，转接调用Framework
+`js -> webview -> framework -> canvas`
+####  RN：通过Bridege桥接器访问原生组件
+`JS -> Bridge -> framework -> canvas`
+####  Flutter：直接操作Canvas
+```
+Dart -> Skia -> canvas
+
+每个APP内都有自己的一套UI组件，跨平台；包略大，初始化6.7MB
+```
+
