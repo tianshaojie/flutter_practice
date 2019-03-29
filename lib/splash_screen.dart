@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/constants/constants.dart';
-import 'package:flutter_practice/main_page.dart';
+import 'package:flutter_practice/main_screen.dart';
 
 class SplashPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return new SplashState();
-  }
+  State<StatefulWidget> createState() => SplashState();
 }
 
 class SplashState extends State<SplashPage> with TickerProviderStateMixin {
@@ -21,20 +19,20 @@ class SplashState extends State<SplashPage> with TickerProviderStateMixin {
 
     // 动画管理器
     controller = new AnimationController(
-        duration: new Duration(microseconds: 1500),
+        duration: new Duration(milliseconds: 1500),
         vsync: this
     );
 
     // 动画
-    animation = Tween(begin: 0.0, end: 1.0).animate(controller);
+    animation = Tween(begin: 1.0, end: 0.5).animate(controller);
 
     animationStatusListener = (status) {
-        if(status == AnimationStatus.completed) {
-          Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => MainPage()),
-              (router) => router == null
-          );
-        }
+      if(status == AnimationStatus.completed) {
+        Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => MainPage()),
+                (router) => router == null
+        );
+      }
     };
 
     // 注册动画观察者
@@ -50,7 +48,7 @@ class SplashState extends State<SplashPage> with TickerProviderStateMixin {
       opacity: animation,
       child: Image.asset(
         splashBackgroundImage,
-        fit: BoxFit.fitWidth,
+        fit: BoxFit.fill,
       ),
     );
   }
