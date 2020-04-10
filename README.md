@@ -32,7 +32,7 @@ flutter upgrade
 `java/objectc -> framework -> canvas`
 ####  WebView：PhoneGap，基于浏览器，提供一套js框架，转接调用Framework
 `js -> webview -> framework -> canvas`
-####  RN：通过Bridege桥接器访问原生组件
+####  RN：通过Bridge桥接器访问原生组件
 `JS -> Bridge -> framework -> canvas`
 ####  Flutter：直接操作Canvas
 ```
