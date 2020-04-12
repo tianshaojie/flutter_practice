@@ -11,6 +11,6 @@
     <!--</item>-->
     <item>
         <bitmap
-            android:src="@mipmap/launch_image" />
+            android:src="@mipmap/splash" />
     </item>
 </layer-list>
