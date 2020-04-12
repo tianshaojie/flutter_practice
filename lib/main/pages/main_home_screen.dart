@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice/main/pages/main_news_screen.dart';
 import 'package:flutter_practice/main/pages/main_mine_screen.dart';
 import 'package:flutter_practice/practice/SimpleList.dart';
 import 'package:flutter_practice/practice/AppBarBottomWidget.dart';

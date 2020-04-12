@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
       title: 'Flutter bottomNavigationBar',
       home: MainNavigation(),
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.deepOrange,
       ),
     );
   }
@@ -49,6 +49,7 @@ class _MainNavigationState extends State<MainNavigation>
         children: _tabPages,
         physics: NeverScrollableScrollPhysics(),
       ),
+//      bottomNavigationBar: SizedBox(height: 55, child: BottomNavigationBar()),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
 //          onTap: (index)=> _controller.animateToPage(index, duration: Duration(milliseconds: 500), curve: Curves.fastOutSlowIn),
@@ -58,7 +59,8 @@ class _MainNavigationState extends State<MainNavigation>
               _currentIndex = index;
             });
           },
-          iconSize: 22,
+          backgroundColor: Colors.white,
+          iconSize: 24,
           fixedColor: Theme.of(context).primaryColor,
           type: BottomNavigationBarType.fixed,
           items: _tabIcons.map((name) {
@@ -80,7 +82,7 @@ class _MainNavigationState extends State<MainNavigation>
   }
 
   Text _tabText(int index) {
-    return new Text(_tabNames[index], style: TextStyle(fontSize: 11));
+    return new Text(_tabNames[index], style: TextStyle(fontSize: 10));
   }
 
   Color _tabColor(int index) {
